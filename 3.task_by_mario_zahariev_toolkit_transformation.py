@@ -53,19 +53,45 @@ elif choice == 5:
 
 elif choice == 6:
     # TODO: Remove all spaces from the string using replace() or join()
-    pass
+    text = text.replace(" ", "")
+    print(text)
 
 elif choice == 7:
     # TODO: Replace all vowels with "*" using a loop or comprehension
-    pass
+    new_text = ""
+
+    for vowels in text:
+        if vowels.lower() in "aeiou":
+            new_text += "*"
+        else:
+            new_text += vowels
+
+    print(new_text)
+
 
 elif choice == 8:
     # TODO: Check if the text is a palindrome (ignoring case and spaces)
-    pass
+    text = text.lower().replace(" ", "")
+
+    if text == text[::-1]:
+        print("Text is a palindrome!")
+    else:
+        print("Text is not a palindrome.")
+
 
 elif choice == 9:
     # TODO: Count the frequency of each word and display the result
-    pass
+    text = text.lower().split()
+    freq = {}
+
+    for word in text:
+        if word in freq:
+            freq[word] += 1
+        else:
+            freq[word] = 1
+
+    for word, count in freq.items():
+        print(f"{word}:{count}")
 
 else:
     print("❌ Invalid choice! Please restart the program.")
