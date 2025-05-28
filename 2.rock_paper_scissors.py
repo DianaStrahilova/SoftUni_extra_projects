@@ -1,8 +1,29 @@
 import random
 
-rock = "Rock"
-paper = "Paper"
-scissors = "Scissors"
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
 player_move = input("Choose [r]ock, [p]aper or [s]cissors: ")
 
@@ -28,12 +49,12 @@ else:
 if player_move == rock and computer_move == scissors or \
     player_move == paper and computer_move == rock or \
     player_move == scissors and computer_move == paper:
-    print("You Win!")
+    print(f"You Win! {player_move}")
     print(f"Computer move was: {computer_move}")
 elif player_move == computer_move:
-    print("It's a draw!")
+    print(f"It's a draw! {player_move}")
 else:
-    print("You lose!")
+    print(f"You lose! {player_move}")
     print(f"Computer move was: {computer_move}")
 
 
